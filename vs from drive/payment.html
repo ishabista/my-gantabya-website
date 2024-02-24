@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Select Payment Method</h1>
+        <div class="payment-methods">
+            <div class="payment-method">
+                <img src="images\eSewa-logo (1).jpg" alt="eSewa Logo">
+                <button onclick="payWithESewa()">Pay with eSewa</button>
+            </div>
+            <div class="payment-method">
+                <img src="images\logo1.jpg" alt="Khalti Logo">
+                <button onclick="payWithKhalti()">Pay with Khalti</button>
+            </div>
+            <div class="payment-method">
+                <img src="images\423062904_364632869712776_3879957729096030022_n (1).jpg" alt="Your Image">
+                <button onclick="PROCEED()">PROCEED</button>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function payWithESewa() {
+            // Redirect to eSewa payment page
+            window.location.href = "https://esewa.com.np";
+        }
+
+        function payWithKhalti() {
+            // Redirect to Khalti payment page
+            window.location.href = "https://khalti.com";
+        }
+
+        function PROCEED() {
+            window.location.href = "home.html";
+            
+        }
+    </script>
+</body>
+</html>

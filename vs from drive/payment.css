@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.payment-methods {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.payment-method {
+    margin:  50px;
+}
+
+/* Target the first and second payment methods and their images */
+.payment-method:nth-child(1) img,
+.payment-method:nth-child(2) img {
+    width: 100px; /* Decrease the width for the first and second images */
+    height: auto;
+}
+
+/* Target the third payment method and its image */
+.payment-method:nth-child(3) {
+    position: relative; /* Make the parent container of the third image relative */
+}
+
+.payment-method:nth-child(3) img {
+    width: 350px; /* Increase the width for the third image */
+    height: auto;
+    margin-bottom: 10px;
+    margin-top: 300px;
+    margin-left: -640px;
+}
+
+.payment-method:nth-child(3) button {
+    position: absolute; /* Position the button absolutely */
+    bottom: -30px; /* Adjust the distance from the bottom */
+    left: 50%; /* Center the button horizontally */
+    transform: translateX(-50%); /* Adjust horizontally centered position */
+    margin-left: -325px;
+}
+
+.payment-method button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+   width:200px;
+}
+
+.payment-method button:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <a href="admininsert.php">admininsert</a>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th, table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        table tr:hover {
+            background-color: #f2f2f2;
+        }
+
+        form {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Booking Requests</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>Destination</th>
+            <th>Guests</th>
+            <th>Arrival</th>
+            <th>Leaving</th>
+            <th>Action</th>
+        </tr>
+        <?php foreach ($bookingRequests as $request): ?>
+        <tr>
+            <td><?= $request['name'] ?></td>
+            <td><?= $request['email'] ?></td>
+            <td><?= $request['contact'] ?></td>
+            <td><?= $request['destination'] ?></td>
+            <td><?= $request['guests'] ?></td>
+            <td><?= $request['arrival'] ?></td>
+            <td><?= $request['leaving'] ?></td>
+            <td>
+                <form method="post">
+                    <input type="hidden" name="id" value="<?= $request['id'] ?>">
+                    <button type="submit" name="approve">Approve</button>
+                    <button type="submit" name="reject">Reject</button>
+                </form>
+            </td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
+</body>
+</html>
